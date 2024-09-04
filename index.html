@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Média de Notas com JavaScript</h2>
+    Primeira nota: <input id="nota1" type="number"> <br/>
+    Segunda nota: <input id="nota2" type="number"> <br/>
+    <button onclick="calcularMedia()">Calcular Média</button>
+
+    <script>
+        function calcularMedia() {
+            // Obtém os valores das notas e converte para float
+            var nota1 = parseFloat(document.getElementById("nota1").value);
+            var nota2 = parseFloat(document.getElementById("nota2").value);
+
+            // Verifica se as notas são números válidos
+            if (isNaN(nota1) || isNaN(nota2)) {
+                alert("Por favor, insira valores válidos para ambas as notas.");
+                return;
+            }
+
+            // Calcula a média
+            var media = (nota1 + nota2) / 2;
+
+            // Exibe a mensagem baseada na média calculada
+            if (media >= 7) {
+                alert("Parabéns, aprovado! Média: " + media.toFixed(2));
+            } else {
+                alert("Reprovado! Média: " + media.toFixed(2));
+            }
+        }
+    </script>
+</body>
+</html>
